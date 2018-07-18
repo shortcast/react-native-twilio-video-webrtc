@@ -16,10 +16,10 @@
 
 @end
 
-@implementation TVITrack(RCTTWSerializable)
+@implementation TVITrackPublication(RCTTWSerializable)
 
 - (id)toJSON {
-  return @{ @"trackId": self.trackId };
+  return @{ @"trackId": self.trackSid };
 }
 
 @end

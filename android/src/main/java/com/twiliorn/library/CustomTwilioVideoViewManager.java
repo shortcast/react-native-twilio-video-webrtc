@@ -74,9 +74,6 @@ public class CustomTwilioVideoViewManager extends SimpleViewManager<CustomTwilio
                 Boolean audioEnabled = args.getBoolean(0);
                 view.toggleAudio(audioEnabled);
                 break;
-            case GET_STATS:
-                view.getStats();
-                break;
             case DISABLE_OPENSL_ES:
                 view.disableOpenSLES();
                 break;
@@ -115,7 +112,6 @@ public class CustomTwilioVideoViewManager extends SimpleViewManager<CustomTwilio
                 "switchCamera", SWITCH_CAMERA,
                 "toggleVideo", TOGGLE_VIDEO,
                 "toggleSound", TOGGLE_SOUND,
-                "getStats", GET_STATS,
                 "disableOpenSLES", DISABLE_OPENSL_ES
         );
     }

@@ -71,12 +71,7 @@ const propTypes = {
   /**
    * Callback that is called when a participant exits a room.
    */
-  onRoomParticipantDidDisconnect: PropTypes.func,
-
-  /**
-   * Callback that is called when stats are received (after calling getStats)
-   */
-  onStatsReceived: PropTypes.func
+  onRoomParticipantDidDisconnect: PropTypes.func
 }
 
 const nativeEvents = {
@@ -85,7 +80,6 @@ const nativeEvents = {
   switchCamera: 3,
   toggleVideo: 4,
   toggleSound: 5,
-  getStats: 6,
   disableOpenSLES: 7
 }
 
@@ -108,10 +102,6 @@ class CustomTwilioVideoView extends Component {
 
   setLocalAudioEnabled (enabled) {
     this.runCommand(nativeEvents.toggleSound, [enabled])
-  }
-
-  getStats () {
-    this.runCommand(nativeEvents.getStats, [])
   }
 
   disableOpenSLES () {

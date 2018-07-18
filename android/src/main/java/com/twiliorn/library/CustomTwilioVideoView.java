@@ -474,45 +474,6 @@ public class CustomTwilioVideoView extends View implements LifecycleEventListene
         return result;
     }
 
-    public void getStats() {
-        if (room != null) {
-            room.getStats(new StatsListener() {
-                @Override
-                public void onStats(List<StatsReport> statsReports) {
-                    WritableMap event = new WritableNativeMap();
-                    for (StatsReport sr : statsReports) {
-                        WritableMap connectionStats = new WritableNativeMap();
-                        WritableArray as = new WritableNativeArray();
-                        for (AudioTrackStats s : sr.getAudioTrackStats()) {
-                            as.pushMap(convertAudioTrackStats(s));
-                        }
-                        connectionStats.putArray("audioTrackStats", as);
-
-                        WritableArray vs = new WritableNativeArray();
-                        for (VideoTrackStats s : sr.getVideoTrackStats()) {
-                            vs.pushMap(convertVideoTrackStats(s));
-                        }
-                        connectionStats.putArray("videoTrackStats", vs);
-
-                        WritableArray las = new WritableNativeArray();
-                        for (LocalAudioTrackStats s : sr.getLocalAudioTrackStats()) {
-                            las.pushMap(convertLocalAudioTrackStats(s));
-                        }
-                        connectionStats.putArray("localAudioTrackStats", las);
-
-                        WritableArray lvs = new WritableNativeArray();
-                        for (LocalVideoTrackStats s : sr.getLocalVideoTrackStats()) {
-                            lvs.pushMap(convertLocalVideoTrackStats(s));
-                        }
-                        connectionStats.putArray("localVideoTrackStats", lvs);
-                        event.putMap(sr.getPeerConnectionId(), connectionStats);
-                    }
-                    pushEvent(CustomTwilioVideoView.this, ON_STATS_RECEIVED, event);
-                }
-            });
-        }
-    }
-
     public void disableOpenSLES() {
       WebRtcAudioManager.setBlacklistDeviceForOpenSLESUsage(true);
     }

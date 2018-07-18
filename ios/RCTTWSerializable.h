@@ -15,7 +15,7 @@
 
 @end
 
-@interface TVIParticipant(RCTTWSerializable)<RCTTWSerializable>
+@interface TVIRemoteParticipant(RCTTWSerializable)<RCTTWSerializable>
 @end
 
 @interface TVITrack(RCTTWSerializable)<RCTTWSerializable>

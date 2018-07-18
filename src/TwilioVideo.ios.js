@@ -103,13 +103,7 @@ export default class extends Component {
      *
      * @param {{error}} The error message description
      */
-    onCameraDidStopRunning: PropTypes.func,
-    /**
-     * Called when stats are received (after calling getStats)
-     *
-     */
-    onStatsReceived: PropTypes.func,
-    ...View.propTypes
+    onCameraDidStopRunning: PropTypes.func
   }
 
   constructor (props) {
@@ -156,13 +150,6 @@ export default class extends Component {
    */
   flipCamera () {
     TWVideoModule.flipCamera()
-  }
-
-  /**
-   * Get connection stats
-   */
-  getStats () {
-    TWVideoModule.getStats()
   }
 
   /**
