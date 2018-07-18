@@ -133,8 +133,7 @@ class CustomTwilioVideoView extends Component {
       'onParticipantAddedVideoTrack',
       'onParticipantRemovedVideoTrack',
       'onRoomParticipantDidConnect',
-      'onRoomParticipantDidDisconnect',
-      'onStatsReceived'
+      'onRoomParticipantDidDisconnect'
     ].reduce((wrappedEvents, eventName) => {
       if (this.props[eventName]) {
         return {

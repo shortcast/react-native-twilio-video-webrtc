@@ -28,7 +28,7 @@ static NSString* cameraWasInterrupted         = @"cameraWasInterrupted";
 static NSString* cameraDidStopRunning         = @"cameraDidStopRunning";
 static NSString* statsReceived                = @"statsReceived";
 
-@interface RCTTWVideoModule () <TVILocalParticipantDelegate, TVIRoomDelegate, TVICameraCapturerDelegate>
+@interface RCTTWVideoModule () <TVILocalParticipantDelegate, TVIRoomDelegate, TVICameraCapturerDelegate, TVIRemoteParticipantDelegate>
 
 @property (strong, nonatomic) TVICameraCapturer *camera;
 @property (strong, nonatomic) TVIScreenCapturer *screen;

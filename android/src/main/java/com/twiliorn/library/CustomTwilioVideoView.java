@@ -74,7 +74,6 @@ import static com.twiliorn.library.CustomTwilioVideoView.Events.ON_PARTICIPANT_D
 import static com.twiliorn.library.CustomTwilioVideoView.Events.ON_VIDEO_CHANGED;
 import static com.twiliorn.library.CustomTwilioVideoView.Events.ON_PARTICIPANT_ADDED_VIDEO_TRACK;
 import static com.twiliorn.library.CustomTwilioVideoView.Events.ON_PARTICIPANT_REMOVED_VIDEO_TRACK;
-import static com.twiliorn.library.CustomTwilioVideoView.Events.ON_STATS_RECEIVED;
 
 public class CustomTwilioVideoView extends View implements LifecycleEventListener {
     private static final String TAG = "CustomTwilioVideoView";
@@ -89,8 +88,7 @@ public class CustomTwilioVideoView extends View implements LifecycleEventListene
             Events.ON_PARTICIPANT_CONNECTED,
             Events.ON_PARTICIPANT_DISCONNECTED,
             Events.ON_PARTICIPANT_ADDED_VIDEO_TRACK,
-            Events.ON_PARTICIPANT_REMOVED_VIDEO_TRACK,
-            Events.ON_STATS_RECEIVED})
+            Events.ON_PARTICIPANT_REMOVED_VIDEO_TRACK})
     public @interface Events {
         String ON_CAMERA_SWITCHED = "onCameraSwitched";
         String ON_VIDEO_CHANGED = "onVideoChanged";
@@ -102,7 +100,6 @@ public class CustomTwilioVideoView extends View implements LifecycleEventListene
         String ON_PARTICIPANT_DISCONNECTED = "onRoomParticipantDidDisconnect";
         String ON_PARTICIPANT_ADDED_VIDEO_TRACK = "onParticipantAddedVideoTrack";
         String ON_PARTICIPANT_REMOVED_VIDEO_TRACK = "onParticipantRemovedVideoTrack";
-        String ON_STATS_RECEIVED = "onStatsReceived";
     }
 
     private final ThemedReactContext themedReactContext;
